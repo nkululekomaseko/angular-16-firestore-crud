@@ -1,5 +1,4 @@
 export const environment = {
-  isProduction: false,
   firebase: {
     apiKey: "AIzaSyBK3TOHN_G2Ts9crI_GwRXorYoqMFqhpS0",
     authDomain: "nk-angular-firebase.firebaseapp.com",

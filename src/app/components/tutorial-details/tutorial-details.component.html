@@ -39,7 +39,7 @@
 
   <button
     (click)="updatePublished(true)"
-    *ngIf="currentTutorial.published"
+    *ngIf="!currentTutorial.published"
     class="badge badge-primary mr-2"
   >
     Publish

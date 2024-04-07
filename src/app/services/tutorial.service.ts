@@ -18,7 +18,7 @@ export class TutorialService {
   }
 
   create(tutorial: Tutorial): Promise<DocumentReference<Tutorial>> {
-    return this.tutorialsRef.add(tutorial);
+    return this.tutorialsRef.add({...tutorial});
   }
 
   update(id: string, partialTutorial: Partial<Tutorial>): Promise<void> {

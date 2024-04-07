@@ -14,6 +14,10 @@
   </div>
   <div class="col-md-6">
     <div *ngIf="currentTutorial">
+      <app-tutorial-details
+        (refreshList)="refreshList()"
+        [tutorial]="currentTutorial"
+      ></app-tutorial-details>
     </div>
 
     <div *ngIf="!currentTutorial">
