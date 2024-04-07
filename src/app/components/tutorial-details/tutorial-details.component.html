@@ -1,1 +1,69 @@
-<p>tutorial-details works!</p>
+<div *ngIf="currentTutorial" class="edit-form">
+  <h4>Tutorial</h4>
+  <form>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input
+        [(ngModel)]="currentTutorial.title"
+        class="form-control"
+        id="title"
+        name="title"
+        type="text"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input
+        [(ngModel)]="currentTutorial.description"
+        class="form-control"
+        id="description"
+        name="description"
+        type="text"
+      />
+    </div>
+
+    <div class="form-group">
+      <label><strong>Status:</strong></label>
+      {{ currentTutorial.published ? "Published" : "Pending" }}
+    </div>
+  </form>
+
+  <button
+    (click)="updatePublished(false)"
+    *ngIf="currentTutorial.published"
+    class="badge badge-primary mr-2"
+  >
+    UnPublish
+  </button>
+
+  <button
+    (click)="updatePublished(true)"
+    *ngIf="currentTutorial.published"
+    class="badge badge-primary mr-2"
+  >
+    Publish
+  </button>
+
+  <button
+    (click)="updateTutorial()"
+    class="badge badge-success mr-2"
+  >
+    Update
+  </button>
+
+  <button
+    (click)="deleteTutorial()"
+    class="badge badge-danger mr-2"
+  >
+    Delete
+  </button>
+
+  <p>{{ message }}</p>
+
+</div>
+
+<div *ngIf="!currentTutorial">
+  <br/>
+  <p>Cannot access this tutorial...</p>
+</div>
